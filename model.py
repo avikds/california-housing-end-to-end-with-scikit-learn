@@ -291,8 +291,23 @@ def bootstrap_rmse_ci(y_true, y_pred, n_boot=200, alpha=0.05, random_state=42):
 
     return float(low), float(high)
 
-# Step 19 - feature_importances (not yet solved)
-# TODO: implement
+# Step 19 - feature_importances
+def feature_importances(search, k=5):
+    best_model = search.best_estimator_
+
+    importances = best_model.steps[-1][1].feature_importances_
+    feature_names = best_model.steps[0][1].get_feature_names_out()
+
+    ranked = sorted(
+        zip(importances, feature_names),
+        key=lambda x: x[0],
+        reverse=True
+    )
+
+    return [
+        (float(round(importance, 3)), name)
+        for importance, name in ranked[:k]
+    ]
 
 # Step 20 - worst_errors (not yet solved)
 # TODO: implement
