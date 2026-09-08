@@ -225,8 +225,17 @@ def linear_model(preprocessing):
         LinearRegression()
     )
 
-# Step 15 - forest_model (not yet solved)
-# TODO: implement
+# Step 15 - forest_model
+from sklearn.ensemble import RandomForestRegressor
+
+def forest_model(preprocessing, n_estimators=50, random_state=42):
+    return make_pipeline(
+        preprocessing,
+        RandomForestRegressor(
+            n_estimators=n_estimators,
+            random_state=random_state
+        )
+    )
 
 # Step 16 - random_search (not yet solved)
 # TODO: implement
