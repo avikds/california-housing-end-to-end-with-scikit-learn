@@ -30,7 +30,7 @@ python scaffold.py
 - [x] **18.** bootstrap_rmse_ci
 - [x] **19.** feature_importances
 - [x] **20.** worst_errors
-- [ ] **21.** save_and_reload
+- [x] **21.** save_and_reload
 - [ ] **22.** predict_new
 
 ---
