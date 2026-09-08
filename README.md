@@ -26,7 +26,7 @@ python scaffold.py
 - [x] **14.** linear_model
 - [x] **15.** forest_model
 - [x] **16.** random_search
-- [ ] **17.** test_rmse
+- [x] **17.** test_rmse
 - [ ] **18.** bootstrap_rmse_ci
 - [ ] **19.** feature_importances
 - [ ] **20.** worst_errors
