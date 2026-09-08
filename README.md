@@ -23,7 +23,7 @@ python scaffold.py
 - [x] **11.** rmse
 - [x] **12.** dummy_baseline_rmse
 - [x] **13.** cross_val_rmse
-- [ ] **14.** linear_model
+- [x] **14.** linear_model
 - [ ] **15.** forest_model
 - [ ] **16.** random_search
 - [ ] **17.** test_rmse
