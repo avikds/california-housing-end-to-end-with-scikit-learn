@@ -31,7 +31,7 @@ python scaffold.py
 - [x] **19.** feature_importances
 - [x] **20.** worst_errors
 - [x] **21.** save_and_reload
-- [ ] **22.** predict_new
+- [x] **22.** predict_new
 
 ---
 
