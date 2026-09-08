@@ -33,6 +33,24 @@ python scaffold.py
 - [x] **21.** save_and_reload
 - [x] **22.** predict_new
 
----
+## Results
 
-Built on Deep-ML.
+```
+loaded 20,640 districts, 10 columns; missing total_bedrooms: 207
+train 16,512 / test 4,128 (stratified on income category)
+top correlations with value: median_income +0.69, rooms_per_house +0.14, total_rooms +0.14
+
+dummy (predict the mean)   RMSE    114,284
+linear regression   CV   RMSE     68,866  (+/- 2,193)
+random forest       CV   RMSE     54,438  (+/- 1,341); on its own training data 20,695 -> it overfits, trust the CV number
+
+random search best CV RMSE 53,329 with {'randomforestregressor__max_features': 7, 'columntransformer__geo__n_clusters': 7}
+TEST RMSE 51,887   95% bootstrap CI [49,911, 54,181]
+what it relies on: log__median_income 0.284, cat__ocean_proximity_INLAND 0.130, remainder__bedrooms_ratio 0.108, remainder__people_per_house 0.092
+worst misses (actual / predicted): 500,001 / 131,780, 500,001 / 167,447, 500,001 / 170,580
+  NEAR BAY   income  5.5  ->  $228,063
+  INLAND     income  2.1  ->  $65,877
+  <1H OCEAN  income  9.0  ->  $411,150
+
+saved to california_housing_model.pkl; reloaded model reproduces the test score: True
+```
