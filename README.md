@@ -25,7 +25,7 @@ python scaffold.py
 - [x] **13.** cross_val_rmse
 - [x] **14.** linear_model
 - [x] **15.** forest_model
-- [ ] **16.** random_search
+- [x] **16.** random_search
 - [ ] **17.** test_rmse
 - [ ] **18.** bootstrap_rmse_ci
 - [ ] **19.** feature_importances
