@@ -268,8 +268,28 @@ def test_rmse(model, test_set):
 
     return rmse(y_test, predictions)
 
-# Step 18 - bootstrap_rmse_ci (not yet solved)
-# TODO: implement
+# Step 18 - bootstrap_rmse_ci
+def bootstrap_rmse_ci(y_true, y_pred, n_boot=200, alpha=0.05, random_state=42):
+    y_true = np.asarray(y_true)
+    y_pred = np.asarray(y_pred)
+
+    n = len(y_true)
+    rng = np.random.default_rng(random_state)
+
+    bootstrap_rmses = []
+
+    for _ in range(n_boot):
+        indices = rng.integers(0, n, n)
+        bootstrap_rmses.append(
+            rmse(y_true[indices], y_pred[indices])
+        )
+
+    low, high = np.percentile(
+        bootstrap_rmses,
+        [100 * alpha / 2, 100 * (1 - alpha / 2)]
+    )
+
+    return float(low), float(high)
 
 # Step 19 - feature_importances (not yet solved)
 # TODO: implement
